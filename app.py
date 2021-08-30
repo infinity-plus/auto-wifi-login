@@ -17,7 +17,7 @@ WIFI_PASSWORD = ""
 
 USERNAME_ELEMENT_ID = "username"
 PASSWORD_ELEMENT_ID = "password"
-LOGIN_ELEMENT_ID = "logginbutton"
+LOGIN_ELEMENT_ID = "loginbutton"
 
 
 def is_connected():

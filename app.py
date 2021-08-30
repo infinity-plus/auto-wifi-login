@@ -2,8 +2,7 @@ import requests
 from subprocess import check_output
 from time import sleep
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from sel_start import init_driver
 
 from plyer import notification
 
@@ -30,11 +29,8 @@ def is_connected():
 
 
 def login(url: str, username: str, password: str):
-    options = Options()
-    options.binary_location = BROWSER_EXECUTABLE_PATH
-    options.headless = True
-    driver = webdriver.Chrome(executable_path=BROWSER_DRIVER_PATH,
-                              options=options)
+    driver = init_driver(headless=True)
+
     driver.get(url)
     sleep(2)
     username_element = driver.find_element_by_id(USERNAME_ELEMENT_ID)
